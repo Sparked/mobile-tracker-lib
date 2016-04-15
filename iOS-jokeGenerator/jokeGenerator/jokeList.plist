@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Jokes</key>
+	<array>
+		<string>What happens to a frog’s car when it breaks down?
+
+It gets toad away</string>
+		<string>Why was six scared of seven?
+
+Because seven ate nine</string>
+		<string>Instead of “the John”, I call my toilet “the Jim” 
+
+That way it sounds better when I say I go to the Jim first thing every morning</string>
+		<string>How many tickles does it take to make the octopus laugh?
+
+10 tickles</string>
+		<string>Why did the bicycle fall?
+
+It was too tired</string>
+		<string>Q: What do you call a bear with no teeth?
+A: A gummy bear.</string>
+		<string>Q: How do you count cows? 
+A: With a cowculator.</string>
+		<string>Q: How do astronomers organize a party? 
+A: They planet.</string>
+		<string>I was wondering why the ball kept getting bigger and bigger, and then it hit me.</string>
+		<string>Q: What do computers eat for a snack? 
+A: Microchips!</string>
+		<string>Q: What starts with E, ends with E, and has only 1 letter in it? 
+A: Envelope.</string>
+		<string>Q: What did the big chimney say to the little chimney? 
+A: &quot;You&apos;re too young to smoke.&quot;</string>
+		<string>Q: Why can&apos;t you trust an atom? 
+A: Because they make up everything.</string>
+		<string>Q: What&apos;s the difference between a guitar and a fish? 
+A: You can tune a guitar, but you can&apos;t tuna fish.</string>
+		<string>Q: Why is the barn so noisy? 
+A: Because the cows have horns.</string>
+		<string>The past, present, and future walked into a bar. It was tense.</string>
+	</array>
+</dict>
+</plist>

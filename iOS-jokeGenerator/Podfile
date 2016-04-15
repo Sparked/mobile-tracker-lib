@@ -1,0 +1,10 @@
+target 'jokeGenerator' do
+
+pod 'SnowplowTracker'
+
+end
+
+target 'jokeGeneratorTests' do
+
+end
+
