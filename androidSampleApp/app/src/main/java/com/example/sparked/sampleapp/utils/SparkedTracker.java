@@ -22,6 +22,8 @@ public class SparkedTracker {
     /**
      * Returns a Classic Tracker
      *
+     * @param appId the app ID assigned during sparked onboarding process
+     * @param url collector url
      * @param context the application context
      * @return a new Classic Tracker
      */
@@ -33,6 +35,17 @@ public class SparkedTracker {
     /**
      * Creates account info
      *
+     * @param tracker the tracker object
+     * @param accountId
+     * @param accountName
+     * @param accountEmail
+     * @param accountStartDate account sign up date
+     * @param accountAttributes object containing more account data
+     * @param userId only if account has more that 1 user
+     * @param userName
+     * @param userEmail
+     * @param userAttributes object containing more account data
+     * @param context app context
      */
     public static void updateUser(Tracker tracker, String accountId,
                                   String accountName, String accountEmail,
@@ -65,6 +78,8 @@ public class SparkedTracker {
      * Returns a Classic Tracker
      *
      * @param emitter a Classic emitter
+     * @param appId the app ID assigned during sparked onboarding process
+     * @param context app context
      * @return a new Classic Tracker
      */
     private static Tracker getTracker(String appId, Emitter emitter, Context context) {
@@ -78,6 +93,7 @@ public class SparkedTracker {
     /**
      * Returns a Classic Emitter
      *
+     * @param url collector url
      * @param context the application context
      * @return a new Classic Emitter
      */

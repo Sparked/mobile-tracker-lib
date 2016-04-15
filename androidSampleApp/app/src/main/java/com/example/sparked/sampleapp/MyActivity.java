@@ -96,13 +96,13 @@ public class MyActivity extends AppCompatActivity {
      *
      */
     private void setupTracker() {
-        /* collector url goes here */
-        String url = "snowplow.dev:7089";
+        /* Do not change: collector url goes here */
+        String url = "snowplow.sparked.com";
         /* Insert appId here */
-        String appId = "mPRDaNDbLahPPR/+svo7PwySjP0y";
-        /* set context */
+        String appId = "appId";
+        /* Do not change: set context */
         context = getApplicationContext();
-        /* create Sparked Tracker instance here */
+        /* Do not change: create Sparked Tracker instance here */
         tracker = SparkedTracker.createTracker(appId, url, context);
 
         /* Insert your logged in account id here (in quotes) */
