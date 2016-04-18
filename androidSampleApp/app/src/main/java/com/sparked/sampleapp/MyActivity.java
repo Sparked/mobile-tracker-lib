@@ -1,4 +1,4 @@
-package com.example.sparked.sampleapp;
+package com.sparked.sampleapp;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import com.example.sparked.sampleapp.utils.SparkedTracker;
-import com.snowplowanalytics.snowplow.tracker.*;
+import com.sparked.utils.SparkedTracker;
+import com.snowplowanalytics.snowplow.tracker.Tracker;
 import com.snowplowanalytics.snowplow.tracker.events.PageView;
 import com.snowplowanalytics.snowplow.tracker.events.Unstructured;
 import com.snowplowanalytics.snowplow.tracker.payload.SelfDescribingJson;
@@ -82,7 +82,7 @@ public class MyActivity extends AppCompatActivity {
                 // track unstructured event here!
                 String eventType = "Chose direction";
                 String direction = (i == 0) ? "left" : "right";
-                Map attributes = new HashMap();
+                Map<String, Object> attributes = new HashMap<String, Object>();
                 attributes.put("direction", direction);
                 trackUnstructuredEvent(eventType, attributes);
             }
@@ -114,7 +114,7 @@ public class MyActivity extends AppCompatActivity {
         /* Account email */
         String accountEmail = "nobody@devnull";
         /* Insert static account attributes here. */
-        Map accountAttributes = new HashMap();
+        Map<String, Object> accountAttributes = new HashMap<String, Object>();
         accountAttributes.put("testKey","testValue");
         /* If your business has multiple users per account, set the user id here */
         String userId = "";
@@ -123,14 +123,14 @@ public class MyActivity extends AppCompatActivity {
         /* User email */
         String userEmail = "";
         /* Insert static user attributes here. */
-        Map userAttributes = new HashMap();
+        Map<String, Object> userAttributes = new HashMap<String, Object>();
         /* example adding attribute:
          * userAttributes.put("age", "30");
          */
         /* call the utility function that updates the user with the data above */
-        SparkedTracker.updateUser(tracker, accountId, accountName, accountEmail,
+        SparkedTracker.updateUser(context, tracker, accountId, accountName, accountEmail,
                 accountStartDate, accountAttributes, userId, userName,
-                userEmail, userAttributes, context);
+                userEmail, userAttributes);
     }
 
     /*
@@ -146,8 +146,8 @@ public class MyActivity extends AppCompatActivity {
      * @param eventType string containing event type
      * @param attributes dictionary containing more event attributes
      */
-    public void trackUnstructuredEvent(String eventType, Map attributes) {
-        Map data = new HashMap();
+    public void trackUnstructuredEvent(String eventType, Map<String, Object> attributes) {
+        Map<String, Object> data = new HashMap<String, Object>();
         data.put("evt", eventType);
         data.put("attributes", attributes);
         SelfDescribingJson sdj = new SelfDescribingJson(".", data);

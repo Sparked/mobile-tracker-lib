@@ -1,4 +1,4 @@
-package com.example.sparked.sampleapp;
+package com.sparked.sampleapp;
 
 import org.junit.Test;
 
