@@ -1,4 +1,4 @@
-package com.example.sparked.sampleapp;
+package com.sparked.sampleapp;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,17 +13,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import com.example.sparked.sampleapp.utils.SparkedTracker;
+import com.sparked.utils.SparkedTracker;
 import com.snowplowanalytics.snowplow.tracker.*;
 import com.snowplowanalytics.snowplow.tracker.events.PageView;
 import com.snowplowanalytics.snowplow.tracker.events.Unstructured;
 import com.snowplowanalytics.snowplow.tracker.payload.SelfDescribingJson;
 
+/**
+ * Main application demonstrating the usage of SparkedTracker static methods.
+ */
 public class MyActivity extends AppCompatActivity {
 
-    // declare the sparked tracker.
+    // the snowplow tracker.
     private Tracker tracker;
-    // declare the context object to send to the tracker too.
+    // the context object to send to the tracker to.
     private Context context;
 
     @Override
@@ -82,7 +85,7 @@ public class MyActivity extends AppCompatActivity {
                 // track unstructured event here!
                 String eventType = "Chose direction";
                 String direction = (i == 0) ? "left" : "right";
-                Map attributes = new HashMap();
+                Map<String, Object> attributes = new HashMap();
                 attributes.put("direction", direction);
                 trackUnstructuredEvent(eventType, attributes);
             }
@@ -105,7 +108,7 @@ public class MyActivity extends AppCompatActivity {
         /* Do not change: create Sparked Tracker instance here */
         tracker = SparkedTracker.createTracker(appId, url, context);
 
-        /* Insert your logged in account id here (in quotes) */
+        /* Insert your logged in account id here */
         String accountId = "nobody";
         /* Set the start date of the account in YYYY-MM-DD format */
         String accountStartDate = "2016-01-01";
@@ -113,17 +116,17 @@ public class MyActivity extends AppCompatActivity {
         String accountName = "John Q. Nobody";
         /* Account email */
         String accountEmail = "nobody@devnull";
-        /* Insert static account attributes here. */
-        Map accountAttributes = new HashMap();
-        accountAttributes.put("testKey","testValue");
+        /* Insert static account attributes here; values must be json-serializable */
+        Map<String, Object> accountAttributes = new HashMap<String, Object>();
+        accountAttributes.put("testKey", "testValue");
         /* If your business has multiple users per account, set the user id here */
         String userId = "";
         /* User name */
         String userName = "";
         /* User email */
         String userEmail = "";
-        /* Insert static user attributes here. */
-        Map userAttributes = new HashMap();
+        /* Insert static user attributes here; values must be json-serializable */
+        Map<String, Object> userAttributes = new HashMap<String, Object>();
         /* example adding attribute:
          * userAttributes.put("age", "30");
          */
