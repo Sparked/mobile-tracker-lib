@@ -23,8 +23,6 @@ public class MyActivity extends AppCompatActivity {
 
     // declare the sparked tracker.
     private Tracker tracker;
-    // declare the context object to send to the tracker too.
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +99,8 @@ public class MyActivity extends AppCompatActivity {
         /* Insert appId here */
         String appId = "appId";
         /* Do not change: set context */
-        context = getApplicationContext();
+        // declare the context object to send to the tracker too.
+        Context context = getApplicationContext();
         /* Do not change: create Sparked Tracker instance here */
         tracker = SparkedTracker.createTracker(appId, url, context);
 
