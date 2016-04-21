@@ -112,7 +112,7 @@ public class SparkedTracker {
                 com.snowplowanalytics.snowplow.tracker.classic.Emitter.class)
                 .tick(1)
                 .method(HttpMethod.GET)
-                .security(RequestSecurity.HTTP)
+                .security(RequestSecurity.HTTPS)
                 .sendLimit(500)
                 .build();
     }
